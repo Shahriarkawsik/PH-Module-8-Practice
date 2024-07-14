@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 62.5%;
+}
+
+.grid-items-container {
+  display: grid;
+  width: 50%;
+  height: 40vh;
+  gap: 5px;
+  margin: 0 auto;
+  justify-content: center;
+  align-content: center;
+  grid-template: repeat(2, 50%)/repeat(4, 25%);
+  /*grid-template Syntax: none | [ <'grid-template-rows'> / <'grid-template-columns'> ] | [ <line-names>? <string> <track-size>? <line-names>? ]+ [ / <explicit-track-list> ]? */
+  margin-bottom: 50px;
+}
+
+.item {
+  color: white;
+  font-size: 2rem;
+}
+
+.item-1 {
+  grid-area: 1/1/3/3;
+  /*row-star/column-start/row-end/column-end*/
+  background-color: #E61E65;
+}
+
+.item-2 {
+  grid-area: 1/3/2/5;
+  background-color: #FB9B11;
+}
+
+.item-3 {
+  background-color: #A93BBB;
+}
+
+.item-4 {
+  background-color: #576C7A;
+}
+.btn-container{
+  
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+button{
+  padding: 10px 20px;
+  border: 2px solid #FB9B11;
+  border-radius: 8px;
+}
+button a{
+  color: #E61E65;
+  text-decoration: none;
+  font-size: 1rem;
+
+}
+
+@media screen and (max-width: 768px) {
+  .grid-items-container {
+    width: 100%;
+    height: 100vh;
+    grid-template: repeat(4, 30%) / 100%; 
+  }
+
+  .item-1 {
+    grid-area: 1 / 1 / 2 / 2; /* Adjusted grid area for item-1 */
+  }
+
+  .item-2 {
+    grid-area: 2 / 1 / 3 / 2; /* Adjusted grid area for item-2 */
+    background-color: #FB9B11; /* Reapply background color */
+  }
+
+  .item-3 {
+    grid-area: 3 / 1 / 4 / 2; /* Adjusted grid area for item-3 */
+    background-color: #A93BBB; /* Reapply background color */
+  }
+
+  .item-4 {
+    grid-area: 4 / 1 / 5 / 2; /* Adjusted grid area for item-4 */
+    background-color: #576C7A; /* Reapply background color */
+  }
+
+}
